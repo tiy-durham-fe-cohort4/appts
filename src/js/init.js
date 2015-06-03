@@ -14,7 +14,9 @@ $(function () {
   $('.appt-form').on('submit', function (e) {
     e.preventDefault();
 
-    console.log(formToObj(this));
+    app.appointments.push(formToObj(this));
+
+    console.log(app.appointments);
   });
 
 });
