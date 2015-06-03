@@ -16,7 +16,8 @@ $(function () {
 
     app.appointments.push(formToObj(this));
 
-    console.log(app.appointments);
+    var listHtml = app.view('appointment-list-tmpl', { appointments: app.appointments });
+    $('.appointment-list').html(listHtml);
   });
 
 });

@@ -14,9 +14,29 @@
       <button>Save Appointment</button>
     </form>
 
+    <ul class="appointment-list">
+    </ul>
+
+    <script type="text/html" id="appointment-list-tmpl">
+      <% m.appointments.forEach(function (appt) { %>
+        <%= app.view('appointment-tmpl', appt) %>
+      <% }) %>
+    </script>
+
+    <script type="text/html" id="appointment-tmpl">
+      <li class="appointment">
+        <h2 class="appointment-title"><%- m.title %></h2>
+        <span class="appointment-date"><%- m.date %> <%- m.time %></span>
+        <span class="appointment-place"><%- m.place %></span>
+      </li>
+    </script>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+
     <script src="js/app.js"></script>
     <script src="js/appointments.js"></script>
+    <script src="js/view.js"></script>
     <script src="js/init.js"></script>
 
   </body>
